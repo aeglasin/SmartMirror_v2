@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar xml:lang="de-DE" root="doSomething"
+tag-format="semantics/1.0" version="1.0"
+xmlns="http://www.w3.org/2001/06/grammar"
+xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
+         >
+  <!--Use this format if you want to define a new gramma -->
+  <rule id="callFunction">
+    <one-of>
+      <item>
+        Funktion
+        <item>
+          <ruleref uri="#functionName"/>
+        </item>
+      </item>
+      <item>
+        gib mir Funktion
+        <item>
+          <ruleref uri="#functionName"/>
+        </item>
+      </item>
+      <item>
+        <item>
+          <ruleref uri="#functionName"/>
+        </item>
+      </item>
+    </one-of>
+  </rule>
+<!--
+  <rule id="callFunction_variable">
+    <one-of>
+      <item>
+        Funktion
+        <item>
+          <ruleref uri="sapi:dictation" type="application/srgs+xml"/>
+          <tag>out=rules.latest();</tag>
+        </item>
+      </item>
+      <item>
+        gib mir Funktion
+        <item>
+          <ruleref uri="sapi:dictation" type="application/srgs+xml"/>
+          <tag>out=rules.latest();</tag>
+        </item>
+      </item>
+    </one-of>
+  </rule>
+-->
+  <rule id="functionName">
+    <one-of>
+      <item>
+        A <tag>out="Function A";</tag>
+      </item>
+      <item>
+        B <tag>out="Function B";</tag>
+      </item>
+      <item>
+        C <tag>out="Function C";</tag>
+      </item>
+      <item>
+        1 <tag>out="Function 1";</tag>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="doSomething">
+    <one-of>
+      <item>
+        <ruleref uri="#callFunction"/>
+        <tag>out.FunctionToCall=rules.latest()</tag>
+      </item>
+    </one-of>
+
+  </rule>
+</grammar>

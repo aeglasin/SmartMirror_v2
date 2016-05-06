@@ -1,0 +1,26 @@
+﻿<UserControl
+    x:Class="SmartMirror.Messenger_Notification.Google.Gmail_View"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartMirror.Messenger_Notification.Google"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:SmartMirror.Messenger_Notification.Google"
+    mc:Ignorable="d"
+    d:DesignHeight="150"
+    d:DesignWidth="150">
+
+    <!--<UserControl.DataContext>
+        <ViewModel:Gmail_ViewModel></ViewModel:Gmail_ViewModel>
+    </UserControl.DataContext>-->
+
+    <StackPanel RequestedTheme="Dark" Margin="0,0,-52,-71" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Image x:Name="gmailIcon_Image" Height="100" Width="100" Source="{Binding GmailIcon}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock x:Name="messagesCount_TextBlock" Text="{Binding MessageCount}" MaxLines="1" FontWeight="Bold" TextLineBounds="Tight" Width="150" Height="20" TextAlignment="Center"/>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="signIn_Button" Command="{Binding SignIn}" Width="50" Height="30" Content="Sign In" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button x:Name="listMessages_Button" Command="{Binding ListMessages}" Width="50" Height="30" Content="List" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button x:Name="openEmail_Button" Command="{Binding OpenEmailMessage}" Width="50" Height="30" Content="Open" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

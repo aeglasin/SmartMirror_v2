@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar xml:lang="en-EN" root="doSomething"
+tag-format="semantics/1.0" version="1.0"
+xmlns="http://www.w3.org/2001/06/grammar"
+xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
+         >
+  <!--Use this format if you want to define a new gramma -->
+  <rule id="openNews">
+    <one-of>
+      <item>
+        open the News
+      </item>
+      <item>
+        open News
+      </item>
+      <item>
+        show News
+      </item>
+      <item>
+        show the News
+      </item>
+      <item>
+        show me the News
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="closeNews">
+    <one-of>
+      <item>
+        close all News
+      </item>
+      <item>
+        close News
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="openSpecificNews">
+    <one-of>
+      <item>
+        open News number
+        <ruleref uri="#numbers"/>
+      </item>
+      <item>
+        show News number
+        <ruleref uri="#numbers"/>
+      </item>
+      <item>
+        show me News
+        <ruleref uri="#numbers"/>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="closeSpecificNews">
+    <one-of>
+      <item>
+        close News number
+        <ruleref uri="#numbers"/>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="closeCalender">
+    <one-of>
+      <item>
+        close calender
+      </item>
+      <item>
+        close calender again
+      </item>
+      <item>
+        close my calender
+      </item>
+      <item>
+        close my calender again
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="openCalender">
+    <one-of>
+      <item>
+        open calender
+      </item>
+      <item>
+        open my calender
+      </item>
+      <item>
+        show calender
+      </item>
+      <item>
+        show me calender
+      </item>
+      <item>
+        show me my calender
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="showMailList">
+    <one-of>
+      <item>
+        show me all my mails
+      </item>
+      <item>
+        show all my mails
+      </item>
+      <item>
+        show my mails
+      </item>
+      <item>
+        show mails
+      </item>
+      <item>
+        show all mails
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="showMails">
+    <one-of>
+      <item>
+        show mail number
+        <ruleref uri="#numbers"/>
+      </item>
+      <item>
+        show me mail number
+        <ruleref uri="#numbers"/>
+      </item>
+      <item>
+        give me mail number
+        <ruleref uri="#numbers"/>
+      </item>
+      <item>
+        give mail number
+        <ruleref uri="#numbers"/>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="closeMails">
+    <one-of>
+      <item>
+        close Mails
+      </item>
+      <item>
+        close all Mails
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="numbers">
+    <one-of>
+      <item>
+        1 <tag>out="1";</tag>
+      </item>
+      <item>
+        2 <tag>out="2";</tag>
+      </item>
+      <item>
+        3 <tag>out="3";</tag>
+      </item>
+      <item>
+        4 <tag>out="4";</tag>
+      </item>
+      <item>
+        5 <tag>out="5";</tag>
+      </item>
+      <item>
+        6 <tag>out="6";</tag>
+      </item>
+      <item>
+        7 <tag>out="7";</tag>
+      </item>
+      <item>
+        8 <tag>out="8";</tag>
+      </item>
+      <item>
+        9 <tag>out="9";</tag>
+      </item>
+      <item>
+        10 <tag>out="10";</tag>
+      </item>
+      <item>
+        11 <tag>out="11";</tag>
+      </item>
+      <item>
+        12 <tag>out="12";</tag>
+      </item>
+      <item>
+        13 <tag>out="13";</tag>
+      </item>
+      <item>
+        14 <tag>out="14";</tag>
+      </item>
+      <item>
+        15 <tag>out="15";</tag>
+      </item>
+      <item>
+        16 <tag>out="16";</tag>
+      </item>
+      <item>
+        17 <tag>out="17";</tag>
+      </item>
+      <item>
+        18 <tag>out="18";</tag>
+      </item>
+      <item>
+        19 <tag>out="19";</tag>
+      </item>
+      <item>
+        20 <tag>out="20";</tag>
+      </item>
+      <item>
+        21 <tag>out="21";</tag>
+      </item>
+      <item>
+        22 <tag>out="22";</tag>
+      </item>
+      <item>
+        23 <tag>out="23";</tag>
+      </item>
+      <item>
+        24 <tag>out="24";</tag>
+      </item>
+      <item>
+        25 <tag>out="25";</tag>
+      </item>
+      <item>
+        26 <tag>out="26";</tag>
+      </item>
+      <item>
+        27 <tag>out="27";</tag>
+      </item>
+      <item>
+        28 <tag>out="28";</tag>
+      </item>
+      <item>
+        29 <tag>out="29";</tag>
+      </item>
+      <item>
+        30 <tag>out="30";</tag>
+      </item>
+      <item>
+        31<tag>out="31";</tag>
+      </item>
+      <item>
+        32 <tag>out="32";</tag>
+      </item>
+      <item>
+        33 <tag>out="33";</tag>
+      </item>
+      <item>
+        34 <tag>out="34";</tag>
+      </item>
+      <item>
+        35 <tag>out="35";</tag>
+      </item>
+      <item>
+        36 <tag>out="36";</tag>
+      </item>
+      <item>
+        37 <tag>out="37";</tag>
+      </item>
+      <item>
+        38 <tag>out="38";</tag>
+      </item>
+      <item>
+        39 <tag>out="39";</tag>
+      </item>
+      <item>
+        40 <tag>out="40";</tag>
+      </item>
+      <item>
+        41 <tag>out="41";</tag>
+      </item>
+      <item>
+        42 <tag>out="42";</tag>
+      </item>
+      <item>
+        43 <tag>out="43";</tag>
+      </item>
+      <item>
+        44 <tag>out="44";</tag>
+      </item>
+      <item>
+        45 <tag>out="45";</tag>
+      </item>
+      <item>
+        46 <tag>out="46";</tag>
+      </item>
+      <item>
+        47 <tag>out="47";</tag>
+      </item>
+      <item>
+        48 <tag>out="48";</tag>
+      </item>
+      <item>
+        49 <tag>out="49";</tag>
+      </item>
+      <item>
+        50 <tag>out="50";</tag>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="doSomething">
+    <one-of>
+      <item>
+        <ruleref uri="#openNews"/>
+        <tag>out.command="openNews"</tag>
+      </item>
+      <item>
+        <ruleref uri="#closeNews"/>
+        <tag>out.command="openNews"</tag>
+      </item>
+      <item>
+        <ruleref uri="#openSpecificNews"/>
+        <tag>out.command="openSpecificNews"</tag>
+        <tag>out.param=rules.latest()</tag>
+      </item>
+      <item>
+        <ruleref uri="#closeSpecificNews"/>
+        <tag>out.command="closeSpecificNews"</tag>
+        <tag>out.param=rules.latest()</tag>
+      </item>
+      <item>
+        <ruleref uri="#closeCalender"/>
+        <tag>out.command="closeCalender"</tag>
+      </item>
+      <item>
+        <ruleref uri="#openCalender"/>
+        <tag>out.command="openCalender"</tag>
+      </item>
+      <item>
+        <ruleref uri="#showMailList"/>
+        <tag>out.command="showMailList"</tag>
+      </item>
+      <item>
+        <ruleref uri="#showMails"/>
+        <tag>out.command="showMails"</tag>
+        <tag>out.param=rules.latest()</tag>
+      </item>
+      <item>
+        <ruleref uri="#closeMails"/>
+        <tag>out.command="closeMails"</tag>
+      </item>
+    </one-of>
+  </rule>
+</grammar>
