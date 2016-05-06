@@ -70,13 +70,13 @@ namespace SmartMirror
              switch (command)
                 {
                     case "showMailList": break; //TBD
-                    case "showMails": break; //TBD
+                    case "showMails": break; //TBD has param
                     case "closeCalender":break; //TBD
                     case "openCalender":break; //TBD
-                case "openNews":
-                case "closeNews":
-                case "openSpecificNews":
-                case "closeSpecificNews":
+                    case "openNews":
+                    case "closeNews":
+                    case "openSpecificNews": //has param
+                    case "closeSpecificNews":  //has param
                     default: break;
 
                 }
