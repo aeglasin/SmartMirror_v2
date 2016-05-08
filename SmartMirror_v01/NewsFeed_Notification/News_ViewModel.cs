@@ -80,10 +80,10 @@ namespace SmartMirror.NewsFeed_Notification
             
             String strFormat = "ddd, MMM dd";
             String summary = "";
+            int i = 1;
             foreach (String newsSource in sourceSyndicationListMap.Keys)
             {
                 List<SyndicationItem> syndItemList = sourceSyndicationListMap[newsSource];
-                int i = 1;
                 foreach (SyndicationItem item in syndItemList)
                 {
                     summary = Regex.Replace(item.Summary.Text, "<.*?>", String.Empty);
