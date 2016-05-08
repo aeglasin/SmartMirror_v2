@@ -8,6 +8,7 @@
     xmlns:ViewModel="using:SmartMirror"
     xmlns:Gmail="using:SmartMirror.Messenger_Notification.Google"
     xmlns:News ="using:SmartMirror.NewsFeed_Notification"
+    xmlns:Timer ="using:SmartMirror.Datetime.Timer"
     mc:Ignorable="d">
     
     <UserControl.DataContext>
@@ -24,13 +25,17 @@
         <DataTemplate x:Key="news_Template" x:DataType="News:News_ViewModel">
             <News:News_View/>
         </DataTemplate>
+        <DataTemplate x:Key="timer_Template" x:DataType="Timer:Timer_ViewModel">
+            <Timer:Timer_View/>
+        </DataTemplate>
     </Page.Resources>
-        
     <StackPanel Orientation="Vertical" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark">
+
         <StackPanel Orientation="Horizontal">
             <ContentControl Content="{Binding Gmail_Module}" ContentTemplate="{StaticResource gmail_Template}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="150" Height="150"/>
-            <ContentControl Content="{Binding GmailContent_Module}" ContentTemplate="{StaticResource gmailContent_Template}" />
+            <ContentControl Content="{Binding GmailContent_Module}" ContentTemplate="{StaticResource gmailContent_Template}" VerticalAlignment="Top" />
         </StackPanel>
+        <ContentControl Content="{Binding Timer_Module}" ContentTemplate="{StaticResource timer_Template}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <ContentControl Content="{Binding News_Module}" ContentTemplate="{StaticResource news_Template}"/>
     </StackPanel>
     

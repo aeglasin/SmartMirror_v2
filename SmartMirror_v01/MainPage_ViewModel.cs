@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using SmartMirror.Auxileriers.Speech;
 using Windows.UI.Core;
 using SmartMirror.NewsFeed_Notification;
+using SmartMirror.Datetime.Timer;
 
 namespace SmartMirror
 {
@@ -23,6 +24,14 @@ namespace SmartMirror
         /*News feed module properties*/
         public News_ViewModel News_Module { get; set; }
         private News_View news_View;
+
+        /*Timer module properties*/
+        public Timer_ViewModel _timer_Module;
+        public Timer_ViewModel Timer_Module {
+            get { return _timer_Module; }
+            set { SetProperty(ref _timer_Module, value); }
+        }
+        private Timer_View timer_View;
 
         /*Speech recognition properties*/
         private SpeechComponent speechPart;
@@ -52,7 +61,12 @@ namespace SmartMirror
             News_Module = new News_ViewModel();
             news_View.DataContext = News_Module;
             //News_Module.displayContent();
-            
+
+            //timer_View = new Timer_View();
+            Timer_Module = new Timer_ViewModel();
+            //timer_View.DataContext = Timer_Module;
+            //Timer_Module.displayTime();
+
         }
 
         private async void speechSessionExpired()

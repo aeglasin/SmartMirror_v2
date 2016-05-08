@@ -7,26 +7,36 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Height="40">
 
-    <UserControl.Resources>
+    <!--UserControl.Resources>
         <Storyboard x:Name="FadeAway">
             <DoubleAnimation Duration="0:0:2" From="0"  To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Headline_TextBlock"/>
-
-        </Storyboard>
-    </UserControl.Resources>
+        </Storyboard-->
     
     <StackPanel RequestedTheme="Dark">
-        <TextBlock x:Name="Headline_TextBlock" Text="{Binding HeadLine}"/>
-        <TextBlock x:Name="TickerLine_TextBlock" Text="{Binding TickerLine}" TextWrapping="NoWrap">
-            <TextBlock.RenderTransform>
-                <TranslateTransform x:Name="Ticker" X="0" Y="0" />
-            </TextBlock.RenderTransform>
+        <TextBlock x:Name="Headline_TextBlock" Text="{Binding HeadLine}">
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="TextBlock.Loaded">
                     <BeginStoryboard>
                         <Storyboard>
+                            <DoubleAnimation Duration="0:0:2" From="0"  To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Headline_TextBlock" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+        <TextBlock x:Name="TickerLine_TextBlock" Text="{Binding TickerLine}" TextWrapping="NoWrap">
+            <TextBlock.RenderTransform>
+                <TranslateTransform x:Name="Ticker" X="300" Y="0" />
+            </TextBlock.RenderTransform>
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        
+                        <Storyboard>
                             <DoubleAnimation Storyboard.TargetName="Ticker" Storyboard.TargetProperty="X"
-            					From="100" To="-200" Duration="0:0:30" SpeedRatio="1.5"
+            					From="300" To="-300" Duration="0:0:30" SpeedRatio="1.5"
             					AutoReverse="False" RepeatBehavior="Forever" />
+                            <DoubleAnimation Duration="0:0:2" From="0"  To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Headline_TextBlock"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
