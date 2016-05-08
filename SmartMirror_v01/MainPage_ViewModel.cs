@@ -4,8 +4,8 @@ using SmartMirror.Common;
 using System.Collections.Generic;
 using Google.Apis.Gmail.v1.Data;
 using System.Collections.ObjectModel;
-//using System.Text.RegularExpressions;
-//using SmartMirror.Auxileriers.Speech;
+using System.Text.RegularExpressions;
+using SmartMirror.Auxileriers.Speech;
 using Windows.UI.Core;
 using SmartMirror.NewsFeed_Notification;
 using SmartMirror.Datetime.Timer;
@@ -56,20 +56,20 @@ namespace SmartMirror
         private Timer_View timer_View;
 
         /*Speech recognition properties*/
-        //private SpeechComponent speechPart;
-        //private CoreDispatcher dispatcher;
-        //public Windows.UI.Xaml.Media.Brush indicator { get; set; }
+        private SpeechComponent speechPart;
+        private CoreDispatcher dispatcher;
+        public Windows.UI.Xaml.Media.Brush indicator { get; set; }
 
         public MainPage_ViewModel()
         {
 
-            //indicator = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Red);
-            //speechPart = new SpeechComponent();
-            //dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
-            //speechPart.commandsGenerated += reactOnSpeech;
-            //speechPart.sessionsExpired += speechSessionExpired;
-            //speechPart.startSession();
-            //indicator = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Green);
+            indicator = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Red);
+            speechPart = new SpeechComponent();
+            dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
+            speechPart.commandsGenerated += reactOnSpeech;
+            speechPart.sessionsExpired += speechSessionExpired;
+            speechPart.startSession();
+            indicator = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Green);
 
             #region GmailRegion
             /*Instanciating viewmodels for gmail and content*/
@@ -115,40 +115,41 @@ namespace SmartMirror
 
         }*/
 
-        //private async void speechSessionExpired()
-        //{
-        //    await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>{ indicator = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Red); });
-        //    //tbd
-        //    speechPart.startSession();
+        private async void speechSessionExpired()
+        {
+            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { indicator = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Red); });
+            //tbd
+            speechPart.startSession();
 
-        //    await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { indicator = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Green); });
-        //}
+            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { indicator = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Green); });
+        }
 
-        //private async void  reactOnSpeech(string command,string param)
-        //{
+        private async void reactOnSpeech(string command, string param)
+        {
 
-        //     switch (command)
-        //        {
-        //            case "showMailList": break; //TBD
-        //            case "showMails": break; //TBD has param
-        //            case "closeCalender":break; //TBD
-        //            case "openCalender":break; //TBD
-        //            case "openNews": break;
-        //            case "closeNews": break;
-        //            case "openSpecificNews": break;//has param
-        //            case "closeSpecificNews": break;//has param
-        //            default: break;
+            switch (command)
+            {
+                case "showMailList": break; //TBD
+                case "showMails": break; //TBD has param
+                case "closeCalender": break; //TBD
+                case "openCalender": break; //TBD
+                case "openNews": break;
+                case "closeNews": break;
+                case "openSpecificNews": break;//has param
+                case "closeSpecificNews": break;//has param
+                default: break;
 
-        //        }
-        //      await  dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () => {
-        //            var messageDialog = new Windows.UI.Popups.MessageDialog(command+" parameter was: " +param, "Command detected");
-        //            await messageDialog.ShowAsync();
-        //        });
-               
-            
+            }
+            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog(command + " parameter was: " + param, "Command detected");
+                await messageDialog.ShowAsync();
+            });
 
-            
-        //}
+
+
+
+        }
 
         public void Gmail_ViewModel_ListChanged(List<GmailMessage> messageList)
         {
