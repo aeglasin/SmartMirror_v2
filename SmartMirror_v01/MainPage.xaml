@@ -42,15 +42,16 @@
     </Page.Resources>
         
     <StackPanel Orientation="Vertical" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark">
-        <StackPanel Orientation="Vertical">
-            <ContentControl Content="{Binding Timer_Module}" ContentTemplate="{StaticResource timer_Template}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <ContentControl Content="{Binding Weather_Module}" ContentTemplate="{StaticResource weather_Template}"/>
-        <StackPanel Orientation="Horizontal">
-            <ContentControl Content="{Binding Gmail_Module}" ContentTemplate="{StaticResource gmail_Template}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="150" Height="150"/>
-            <ContentControl Content="{Binding CurrentModule}" ContentTemplateSelector="{StaticResource currentTemplate}"/>
-        </StackPanel>
         
-        <ContentControl Content="{Binding News_Module}" ContentTemplate="{StaticResource news_Template}"/>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <ContentControl Content="{Binding Timer_Module}" ContentTemplate="{StaticResource timer_Template}" Padding="5,5"/>
+                <ContentControl Content="{Binding Weather_Module}" ContentTemplate="{StaticResource weather_Template}" Padding="5,5"/>
+                <ContentControl Content="{Binding Gmail_Module}" ContentTemplate="{StaticResource gmail_Template}" Padding="5,5"/>
+            </StackPanel>
+            <ContentControl Content="{Binding CurrentModule}" ContentTemplateSelector="{StaticResource currentTemplate}" Padding="5,5"/>
+        </StackPanel>
+        <ContentControl Content="{Binding News_Module}" ContentTemplate="{StaticResource news_Template}" Padding="5,5"/>
     </StackPanel>
     
 </Page>

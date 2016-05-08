@@ -100,7 +100,15 @@ namespace SmartMirror.Messenger_Notification.Google
                 foreach (var head in apiMessage.Payload.Headers)
                 {
                     if (head.Name.Equals("Date"))
-                        gmailMessage.DateMessage = head.Value.Remove(head.Value.IndexOf('+'));
+                    {
+                        if (head.Value.Contains('+'))
+                            gmailMessage.DateMessage = head.Value.Remove(head.Value.IndexOf('+'));
+                        else if (head.Value.Contains('-'))
+                            gmailMessage.DateMessage = head.Value.Remove(head.Value.IndexOf('-'));
+                        else
+                            gmailMessage.DateMessage = "";
+
+                    }
                     else if (head.Name.Equals("Subject"))
                         gmailMessage.HeadlineMessage = head.Value;
                     else if (head.Name.Equals("From"))

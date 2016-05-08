@@ -92,9 +92,6 @@
     <Content Include="Assets\Grammar\de\Grammar.xml" />
     <Content Include="Assets\Grammar\en\Grammar.xml" />
     <Content Include="Assets\Grammar\en\SampleGrammar.xml" />
-    <Content Include="Messenger_Notification\Google\client_secret.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Assets\client_secret.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -107,7 +104,12 @@
     <Compile Include="Auxileriers\Speech\SupportedCommandsEnum.cs" />
     <Compile Include="Auxileriers\Speech\IllegaleStateException.cs" />
     <Compile Include="Auxileriers\Speech\SpeechComponent.cs" />
+    <Compile Include="Common\PropertyDataTemplateSelector.cs" />
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Messenger_Notification\Google\Idle_View.xaml.cs">
+      <DependentUpon>Idle_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Messenger_Notification\Google\Idle_ViewModel.cs" />
     <Compile Include="Weather\Weather_View.xaml.cs">
       <DependentUpon>Weather_View.xaml</DependentUpon>
     </Compile>
@@ -129,10 +131,6 @@
       <DependentUpon>Gmail_View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Messenger_Notification\Google\Gmail_ViewModel.cs" />
-    <Compile Include="Messenger_Notification\Notification_View.xaml.cs">
-      <DependentUpon>Notification_View.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Messenger_Notification\Notification_ViewModel.cs" />
     <Compile Include="Common\ViewModelBase.cs" />
     <Compile Include="NewsFeed_Notification\News_View.xaml.cs">
       <DependentUpon>News_View.xaml</DependentUpon>
@@ -165,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Messenger_Notification\Google\Idle_View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Weather\Weather_View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -186,10 +188,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Messenger_Notification\Google\Gmail_View.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Messenger_Notification\Notification_View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

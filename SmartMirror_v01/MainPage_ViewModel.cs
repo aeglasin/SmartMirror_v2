@@ -105,7 +105,7 @@ namespace SmartMirror
 
         }
 
-        private async void speechSessionExpired()
+        /*private async void speechSessionExpired()
         {
             await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>{ indicator = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Red); });
             //tbd
@@ -113,7 +113,7 @@ namespace SmartMirror
 
             await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { indicator = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Green); });
 
-        }
+        }*/
 
         //private async void speechSessionExpired()
         //{

@@ -10,6 +10,6 @@
     d:DesignWidth="400">
 
     <Grid RequestedTheme="Dark">
-        <TextBlock Text="{Binding DigitalTimer}" FontSize="30" />
+        <TextBlock Text="{Binding DigitalTimer}" FontSize="30" TextAlignment="Center" />
     </Grid>
 </UserControl>
