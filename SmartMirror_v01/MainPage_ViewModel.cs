@@ -10,6 +10,7 @@ using SmartMirror.Auxileriers.Speech;
 using Windows.UI.Core;
 using SmartMirror.NewsFeed_Notification;
 using SmartMirror.Datetime.Timer;
+using SmartMirror.Weather;
 
 namespace SmartMirror
 {
@@ -24,6 +25,10 @@ namespace SmartMirror
         /*News feed module properties*/
         public News_ViewModel News_Module { get; set; }
         private News_View news_View;
+
+        /*Weather module properties*/
+        public Weather_ViewModel Weather_Module { get; set; }
+        private Weather_View weather_View;
 
         /*Timer module properties*/
         public Timer_ViewModel _timer_Module;
@@ -66,6 +71,8 @@ namespace SmartMirror
             Timer_Module = new Timer_ViewModel();
             //timer_View.DataContext = Timer_Module;
             //Timer_Module.displayTime();
+
+            Weather_Module = new Weather_ViewModel();
 
         }
 

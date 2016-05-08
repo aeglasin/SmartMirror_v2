@@ -108,6 +108,10 @@
     <Compile Include="Auxileriers\Speech\IllegaleStateException.cs" />
     <Compile Include="Auxileriers\Speech\SpeechComponent.cs" />
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Weather\Weather_View.xaml.cs">
+      <DependentUpon>Weather_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Weather\Weather_ViewModel.cs" />
     <Compile Include="Datetime\Timer\Timer_View.xaml.cs">
       <DependentUpon>Timer_View.xaml</DependentUpon>
     </Compile>
@@ -161,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Weather\Weather_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Datetime\Calendar\Calendar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
