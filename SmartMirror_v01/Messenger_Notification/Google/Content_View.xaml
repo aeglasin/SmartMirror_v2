@@ -5,9 +5,7 @@
     xmlns:local="using:SmartMirror.Messenger_Notification.Google"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="400">
+    mc:Ignorable="d">
 
 
     <StackPanel>
@@ -25,13 +23,15 @@
                         </StackPanel>
                         <StackPanel>
                             <TextBlock Text="Message:" Width="100" Margin="5,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <TextBlock Text="{Binding BodyMessage}" Height="400" Margin="5,0"/>
+                            <TextBlock Text="{Binding BodyMessage}" Height="200" Margin="5,0"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ContentControl.ContentTemplate>
         </ContentControl>
-        <ListView Name="messageList_ListView" ItemsSource="{Binding MessageList}">
+        <ListView Name="messageList_ListView" ItemsSource="{Binding MessageList}" Height="300"
+                ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Visible" 
+                  ScrollViewer.IsVerticalRailEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
