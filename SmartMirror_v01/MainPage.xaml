@@ -10,6 +10,7 @@
     xmlns:News ="using:SmartMirror.NewsFeed_Notification"
     xmlns:Timer ="using:SmartMirror.Datetime.Timer"
     xmlns:Weather ="using:SmartMirror.Weather"
+    xmlns:DataTempSelctor ="using:SmartMirror.Common"
     mc:Ignorable="d">
     
     <UserControl.DataContext>
@@ -23,6 +24,9 @@
         <DataTemplate x:Key="gmailContent_Template" x:DataType="Gmail:Content_ViewModel">
             <Gmail:Content_View/>
         </DataTemplate>
+        <DataTemplate x:Key="idle_Template" x:DataType="Gmail:Idle_ViewModel">
+            <Gmail:Idle_View/>
+        </DataTemplate>
         <DataTemplate x:Key="news_Template" x:DataType="News:News_ViewModel">
             <News:News_View/>
         </DataTemplate>
@@ -32,17 +36,21 @@
         <DataTemplate x:Key="weather_Template" x:DataType="Weather:Weather_ViewModel">
             <Weather:Weather_View/>
         </DataTemplate>
+        <DataTempSelctor:PropertyDataTemplateSelector x:Key="currentTemplate" 
+                                                      GmailDataTemplate="{StaticResource gmailContent_Template}"
+                                                      IdleDataTemplate="{StaticResource idle_Template}"/>
     </Page.Resources>
+        
     <StackPanel Orientation="Vertical" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark">
         <StackPanel Orientation="Vertical">
             <ContentControl Content="{Binding Timer_Module}" ContentTemplate="{StaticResource timer_Template}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <ContentControl Content="{Binding Weather_Module}" ContentTemplate="{StaticResource weather_Template}"/>
+        <StackPanel Orientation="Horizontal">
             <ContentControl Content="{Binding Gmail_Module}" ContentTemplate="{StaticResource gmail_Template}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="150" Height="150"/>
-            <ContentControl Content="{Binding GmailContent_Module}" ContentTemplate="{StaticResource gmailContent_Template}" VerticalAlignment="Top" />
+            <ContentControl Content="{Binding CurrentModule}" ContentTemplateSelector="{StaticResource currentTemplate}"/>
         </StackPanel>
         
         <ContentControl Content="{Binding News_Module}" ContentTemplate="{StaticResource news_Template}"/>
-        
     </StackPanel>
     
 </Page>

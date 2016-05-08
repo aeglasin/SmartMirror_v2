@@ -44,7 +44,6 @@ namespace SmartMirror.Messenger_Notification.Google
             SignIn = new RelayCommand(OnSignIn);
             ListMessages = new RelayCommand(OnListMessages);
             OpenEmailMessage = new RelayCommand(OnOpenEmailMessage);
-            MessageList = new List<GmailMessage>();
             _gmailMesageList = new List<GmailMessage>();
 
 
@@ -87,7 +86,9 @@ namespace SmartMirror.Messenger_Notification.Google
 
         public void OnListMessages()
         {
-            
+            if (_service == null)
+                return;
+
             UsersResource.MessagesResource.ListRequest request = _service.Users.Messages.List("me");
             ListMessagesResponse messageList = request.Execute();
             List <Message> messages = new List<Message>(messageList.Messages);

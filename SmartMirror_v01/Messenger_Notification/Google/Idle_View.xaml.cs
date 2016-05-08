@@ -15,11 +15,11 @@ using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace SmartMirror.Messanger_Notification
+namespace SmartMirror.Messenger_Notification.Google
 {
-    public sealed partial class Notification_View : UserControl
+    public sealed partial class Idle_View : UserControl
     {
-        public Notification_View()
+        public Idle_View()
         {
             this.InitializeComponent();
         }
