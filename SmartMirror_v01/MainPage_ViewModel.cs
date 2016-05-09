@@ -135,8 +135,10 @@ namespace SmartMirror
                 case "openCalender": break; //TBD
                 case "openNews": break;
                 case "closeNews": break;
-                case "openSpecificNews": break;//has param
+                case "openSpecificNews":  break;//has param
                 case "closeSpecificNews": break;//has param
+                case "closeWeather": break;
+                case "showWeather": break;
                 default: break;
 
             }

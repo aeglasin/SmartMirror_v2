@@ -306,8 +306,37 @@ xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
     </one-of>
   </rule>
 
+  <rule id="showWeather">
+    <one-of>
+      <item>
+        show me the weather
+      </item>
+      <item>
+        show weather
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="closeWeather">
+    <one-of>
+      <item>
+       close weather
+      </item>
+      <item>close the weather</item>
+    </one-of>
+  </rule>
+
+
   <rule id="doSomething">
     <one-of>
+      <item>
+        <ruleref uri="#showWeather"/>
+        <tag>out.command="showWeather"</tag>
+      </item>
+      <item>
+        <ruleref uri="#closeWeather"/>
+        <tag>out.command="showWeather"</tag>
+      </item>
       <item>
         <ruleref uri="#openNews"/>
         <tag>out.command="openNews"</tag>
