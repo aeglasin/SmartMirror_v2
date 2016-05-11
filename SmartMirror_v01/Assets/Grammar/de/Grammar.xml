@@ -8,22 +8,7 @@ xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
   <rule id="openNews">
     <one-of>
       <item>
-        zeig mir die News
-      </item>
-      <item>
-        gib mir die News
-      </item>
-      <item>
-        News
-      </item>
-      <item>
-        zeig mir die Nachrichten
-      </item>
-      <item>
-        gib mir die Nachrichten
-      </item>
-      <item>
-       Was gibt's neues in der Welt
+        News anzeigen
       </item>
     </one-of>
   </rule>
@@ -33,25 +18,14 @@ xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
       <item>
         News schließen
       </item>
-      <item>
-        schließ die News
-      </item>
     </one-of>
   </rule>
 
   <rule id="openSpecificNews">
     <one-of>
       <item>
-        zeig mir News nummer
+        öffne News
         <ruleref uri="#numbers"/>
-      </item>
-      <item>
-        gib mir News nummer
-        <ruleref uri="#numbers"/>
-      </item>
-      <item>
-        zeig mir Nachricht nummer
-       <ruleref uri="#numbers"/>
       </item>
     </one-of>
   </rule>
@@ -59,13 +33,8 @@ xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
   <rule id="closeSpecificNews">
     <one-of>
       <item>
-          schließ Nachricht nummer
+          schließe News
         <ruleref uri="#numbers"/>
-      </item>
-      <item>
-           Nachricht nummer
-        <ruleref uri="#numbers"/>
-          schließ
       </item>
     </one-of>
   </rule>
@@ -81,15 +50,6 @@ xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
   <rule id="openCalender">
     <one-of>
       <item>
-        zeig mir meinen Kalender
-      </item>
-      <item>
-        gib mir meinen Kalender
-      </item>
-      <item>
-          Kalender
-      </item>
-      <item>
           Kalender zeigen
       </item>
     </one-of>
@@ -98,12 +58,6 @@ xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
   <rule id="showMailList">
     <one-of>
       <item>
-        zeig mir meine Mails
-      </item>
-      <item>
-        zeig mir meine Emails
-      </item>
-      <item>
         Emails
       </item>
     </one-of>
@@ -111,12 +65,8 @@ xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
 
   <rule id="showMails">
     <one-of>
-      <item>
-       Zeig mir Mail nummer
-        <ruleref uri="#numbers"/>
-      </item>
      <item>
-        Mail nummer
+        öffne Mail
         <ruleref uri="#numbers"/>
       </item>
     </one-of>
@@ -125,7 +75,7 @@ xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
   <rule id="closeMails">
     <one-of>
       <item>
-        schließ meine Mails
+        schließ Mails
       </item>
     </one-of>
   </rule>
@@ -288,7 +238,7 @@ xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
   <rule id="showWeather">
     <one-of>
       <item>
-        zeig mir das Wetter
+        Wetter
       </item>
     </one-of>
   </rule>
@@ -296,9 +246,8 @@ xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions"
   <rule id="closeWeather">
     <one-of>
       <item>
-          genug des Wetters
+          Wetter schließen
       </item>
-      <item>schließ das Wetter</item>
     </one-of>
   </rule>
   
