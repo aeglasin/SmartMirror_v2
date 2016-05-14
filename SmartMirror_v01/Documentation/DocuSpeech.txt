@@ -1,0 +1,4 @@
+﻿Used technology: Windows.Media.SpeechRecognition API
+W3 standardised XML-Format for grammar
+Main tutorial for this topic on UWP:
+https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis

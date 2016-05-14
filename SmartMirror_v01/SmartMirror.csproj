@@ -147,6 +147,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Documentation\DocuSpeech.txt" />
     <Content Include="Messenger_Notification\Google\gmail-icon.png" />
     <Content Include="Assets\Grammar\de\SampleGrammar.xml" />
     <Content Include="Properties\Default.rd.xml" />
